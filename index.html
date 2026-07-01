@@ -1386,20 +1386,20 @@
     });
 
     // ==========================================
-    // 7. LIGHT PASSING EFFECT ON CARDS
+    // 7. LIGHT PASSING EFFECT ON CARD HOVER
     // ==========================================
     document.querySelectorAll('.world-card').forEach((card) => {
       const light = card.querySelector('.light');
       if (!light) return;
-      ScrollTrigger.create({
-        trigger: card,
-        start: 'top 85%',
-        once: true,
-        onEnter: () => {
-          gsap.to(light, { opacity: 1, duration: 1.2, ease: 'power2.in' });
-          gsap.to(light, { x: '180vw', duration: 7, ease: 'none', delay: 0.2 });
-          gsap.to(light, { opacity: 0, duration: 1, delay: 6 });
-        },
+      card.addEventListener('mouseenter', () => {
+        gsap.set(light, { x: '-40vw', opacity: 0 });
+        gsap.to(light, { opacity: 1, duration: 0.4, ease: 'power2.in' });
+        gsap.to(light, { x: '180vw', duration: 2.5, ease: 'none' });
+        gsap.to(light, { opacity: 0, duration: 0.5, delay: 2 });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.killTweensOf(light);
+        gsap.to(light, { opacity: 0, duration: 0.3 });
       });
     });
 
