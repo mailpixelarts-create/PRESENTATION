@@ -1,0 +1,668 @@
+================================================================================
+  HOVER EFFECTS REFERENCE GUIDE
+  For Future Build Projects — Cards & Images
+  Created: July 1, 2026
+  By: Empathy Studio
+================================================================================
+
+This file documents reusable hover effects for cards and images.
+Copy any snippet into future projects. Each effect is self-contained.
+
+
+================================================================================
+  TABLE OF CONTENTS
+================================================================================
+
+  1. IMAGE EFFECTS
+     1.1  Scale Zoom
+     1.2  Brightness Shift
+     1.3  Desaturate to Full Color
+     1.4  Pan (Ken Burns)
+     1.5  Blur to Sharp
+     1.6  Grayscale Reveal
+     1.7  Rotation Zoom
+
+  2. CARD EFFECTS
+     2.1  Glow Border
+     2.2  Gradient Border Animation
+     2.3  Lift + Shadow
+     2.4  Glassmorphism Hover
+     2.5  Border Draw (Corner Accents)
+     2.6  Background Tint Shift
+     2.7  Card Flip (3D)
+     2.8  Diagonal Wipe Reveal
+
+  3. TEXT EFFECTS
+     3.1  Color Shift
+     3.2  Underline Slide In
+     3.3  Letter Spacing Expand
+     3.4  Text Glow
+
+  4. OVERLAY EFFECTS
+     4.1  Gradient Overlay Shift
+     4.2  Noise Texture Overlay
+     4.3  Color Wash Overlay
+
+  5. COMBINED EFFECTS (Ready-to-Use Card Styles)
+     5.1  Glassmorphism Card
+     5.2  Minimal Border Card
+     5.3  Split Layout Card
+     5.4  Diagonal Split Card
+     5.5  Refined Card (Noise + Gradient Border + Pill)
+
+
+================================================================================
+  1. IMAGE EFFECTS
+================================================================================
+
+--- 1.1 SCALE ZOOM ---
+The most common effect. Image scales up slightly on hover.
+
+  .card-img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  Use: Everywhere. Safe, elegant, universal.
+  Easing: cubic-bezier(0.16, 1, 0.3, 1) = smooth deceleration.
+
+
+--- 1.2 BRIGHTNESS SHIFT ---
+Image gets brighter on hover.
+
+  .card-img {
+    filter: brightness(0.5);
+    transition: filter 0.8s ease;
+  }
+  .card:hover .card-img {
+    filter: brightness(0.7);
+  }
+
+  Use: Dark overlay cards where text sits on top.
+  Tip: Start dim (0.4-0.5), hover to (0.6-0.7).
+
+
+--- 1.3 DESATURATE TO FULL COLOR ---
+Image goes from muted to vibrant on hover.
+
+  .card-img {
+    filter: saturate(0.6) brightness(0.5);
+    transition: filter 0.8s ease;
+  }
+  .card:hover .card-img {
+    filter: saturate(1) brightness(0.65);
+  }
+
+  Use: Editorial, fashion, luxury brands.
+
+
+--- 1.4 PAN (KEN BURNS) ---
+Image slowly pans across the frame on hover.
+
+  .card-img {
+    width: 120%; height: 120%; object-fit: cover;
+    transform: translate(-5%, -5%);
+    transition: transform 8s linear;
+  }
+  .card:hover .card-img {
+    transform: translate(0, 0);
+  }
+
+  Use: Hero sections, fullscreen backgrounds.
+  Note: Use LONG duration (6-10s) for slow cinematic pan.
+
+
+--- 1.5 BLUR TO SHARP ---
+Image starts blurry, becomes sharp on hover.
+
+  .card-img {
+    filter: blur(4px) brightness(0.5);
+    transition: filter 0.8s ease;
+  }
+  .card:hover .card-img {
+    filter: blur(0) brightness(0.65);
+  }
+
+  Use: Mystery/reveal effects, portfolio teasers.
+
+
+--- 1.6 GRAYSCALE REVEAL ---
+Image is black & white, goes color on hover.
+
+  .card-img {
+    filter: grayscale(1) brightness(0.5);
+    transition: filter 0.8s ease;
+  }
+  .card:hover .card-img {
+    filter: grayscale(0) brightness(0.65);
+  }
+
+  Use: Photography portfolios, editorial layouts.
+
+
+--- 1.7 ROTATION ZOOM ---
+Image rotates slightly while zooming.
+
+  .card-img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover .card-img {
+    transform: scale(1.08) rotate(1deg);
+  }
+
+  Use: Playful brands, creative agencies.
+  Note: Keep rotation subtle (1-2deg max).
+
+
+================================================================================
+  2. CARD EFFECTS
+================================================================================
+
+--- 2.1 GLOW BORDER ---
+Subtle glow appears around the card on hover.
+
+  .card {
+    border: 1px solid transparent;
+    transition: box-shadow 0.5s ease;
+  }
+  .card:hover {
+    box-shadow: 0 0 30px rgba(154, 124, 82, 0.15);
+  }
+
+  Use: Premium/luxury cards, call-to-action cards.
+
+
+--- 2.2 GRADIENT BORDER ANIMATION ---
+Border color animates through a gradient on hover.
+
+  .card {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(135deg, transparent, transparent) border-box;
+    transition: all 0.6s;
+  }
+  .card:hover {
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(135deg, rgba(154,124,82,0.5), rgba(212,196,168,0.2), rgba(154,124,82,0.5)) border-box;
+  }
+
+  Use: Luxury brands, high-end portfolios.
+  Note: Requires isolation: isolate on parent.
+
+
+--- 2.3 LIFT + SHADOW ---
+Card lifts up with a deeper shadow on hover.
+
+  .card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  Use: E-commerce, product cards, dashboards.
+
+
+--- 2.4 GLASSMORPHISM HOVER ---
+Glass panel gets more opaque and border appears.
+
+  .card-glass {
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s;
+  }
+  .card:hover .card-glass {
+    background: rgba(10, 10, 10, 0.5);
+    border-color: rgba(212, 196, 168, 0.2);
+  }
+
+  Use: Modern UI, dark themes, glass-style interfaces.
+
+
+--- 2.5 BORDER DRAW (CORNER ACCENTS) ---
+Corner lines appear on hover.
+
+  .card-corner {
+    position: absolute; top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover .card-corner {
+    border-top-color: rgba(212, 196, 168, 0.4);
+    border-right-color: rgba(212, 196, 168, 0.4);
+    width: 40px; height: 40px;
+  }
+
+  Use: Minimal/luxury designs, editorial layouts.
+
+
+--- 2.6 BACKGROUND TINT SHIFT ---
+Card background shifts to a slightly different shade.
+
+  .card {
+    background: #111111;
+    transition: background 0.5s;
+  }
+  .card:hover {
+    background: #141414;
+  }
+
+  Use: Subtle UI cards, list items, navigation.
+
+
+--- 2.7 CARD FLIP (3D) ---
+Card flips to reveal back side.
+
+  .card-container { perspective: 1000px; }
+  .card {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover { transform: rotateY(180deg); }
+  .card-front, .card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+  }
+  .card-back { transform: rotateY(180deg); }
+
+  Use: Portfolio cards, info panels, game UI.
+
+
+--- 2.8 DIAGONAL WIPE REVEAL ---
+A color overlay wipes diagonally across the card.
+
+  .card-overlay {
+    position: absolute; inset: 0;
+    background: rgba(10, 10, 10, 0.7);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: clip-path 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card:hover .card-overlay {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  Use: Reveal text/info on hover, dramatic transitions.
+
+
+================================================================================
+  3. TEXT EFFECTS
+================================================================================
+
+--- 3.1 COLOR SHIFT ---
+Text changes color on card hover.
+
+  .card-name { color: var(--white); transition: color 0.4s; }
+  .card:hover .card-name { color: var(--champagne); }
+
+  Use: Everywhere. Standard practice.
+
+
+--- 3.2 UNDERLINE SLIDE IN ---
+Underline slides in from left on hover.
+
+  .card-link {
+    text-decoration: none;
+    background-image: linear-gradient(rgba(154,124,82,0.6), rgba(154,124,82,0.6));
+    background-size: 0% 1px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease;
+  }
+  .card-link:hover { background-size: 100% 1px; }
+
+  Use: Links, CTAs, navigation items.
+
+
+--- 3.3 LETTER SPACING EXPAND ---
+Letters spread apart on hover.
+
+  .card-label {
+    letter-spacing: 0.1em;
+    transition: letter-spacing 0.4s ease;
+  }
+  .card:hover .card-label {
+    letter-spacing: 0.2em;
+  }
+
+  Use: Labels, tags, uppercase text elements.
+
+
+--- 3.4 TEXT GLOW ---
+Text gets a soft glow on hover.
+
+  .card-name {
+    text-shadow: none;
+    transition: text-shadow 0.5s ease;
+  }
+  .card:hover .card-name {
+    text-shadow: 0 0 20px rgba(154, 124, 82, 0.3);
+  }
+
+  Use: Luxury brands, hero text, featured items.
+
+
+================================================================================
+  4. OVERLAY EFFECTS
+================================================================================
+
+--- 4.1 GRADIENT OVERLAY SHIFT ---
+Gradient direction or opacity changes on hover.
+
+  .card-overlay {
+    background: linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.8) 100%);
+    transition: background 0.8s;
+  }
+  .card:hover .card-overlay {
+    background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.9) 100%);
+  }
+
+  Use: Cards with bottom text, hero sections.
+
+
+--- 4.2 NOISE TEXTURE OVERLAY ---
+Subtle grain/noise texture on hover.
+
+  .card::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 3;
+    background-image: url("data:image/svg+xml,..."); /* noise SVG */
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  .card:hover::before { opacity: 0.04; }
+
+  Use: Premium/editorial feel, fashion brands.
+
+
+--- 4.3 COLOR WASH OVERLAY ---
+A colored wash appears over the image.
+
+  .card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(154, 124, 82, 0.15);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  .card:hover::after { opacity: 1; }
+
+  Use: Brand color emphasis, category coding.
+
+
+================================================================================
+  5. COMBINED EFFECTS (Ready-to-Use Card Styles)
+================================================================================
+
+--- 5.1 GLASSMORPHISM CARD ---
+
+  HTML:
+    <a href="#" class="glass-card">
+      <img class="glass-card-img" src="image.jpg" alt="...">
+      <div class="glass-card-panel">
+        <span class="glass-card-num">01</span>
+        <h3 class="glass-card-name">Project Name</h3>
+        <p class="glass-card-desc">Description text</p>
+      </div>
+    </a>
+
+  CSS:
+    .glass-card {
+      position: relative; display: block; overflow: hidden;
+      aspect-ratio: 16/10; text-decoration: none;
+    }
+    .glass-card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; filter: brightness(0.5) saturate(0.8);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover .glass-card-img {
+      filter: brightness(0.6) saturate(0.9);
+      transform: scale(1.05);
+    }
+    .glass-card-panel {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      margin: 16px; padding: 24px;
+      background: rgba(10, 10, 10, 0.4);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      transition: all 0.5s;
+    }
+    .glass-card:hover .glass-card-panel {
+      background: rgba(10, 10, 10, 0.55);
+      border-color: rgba(212, 196, 168, 0.2);
+    }
+
+
+--- 5.2 MINIMAL BORDER CARD ---
+
+  CSS:
+    .minimal-card {
+      position: relative; display: block; overflow: hidden;
+      aspect-ratio: 16/10; text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .minimal-card:hover {
+      border-color: rgba(212, 196, 168, 0.25);
+      background: #141414;
+    }
+    .minimal-card .card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; filter: brightness(0.5) saturate(0.7);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .minimal-card:hover .card-img {
+      filter: brightness(0.6) saturate(0.85);
+      transform: scale(1.03);
+    }
+    .minimal-card-corner {
+      position: absolute; top: 20px; right: 20px;
+      width: 32px; height: 32px;
+      border-top: 1px solid transparent;
+      border-right: 1px solid transparent;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .minimal-card:hover .minimal-card-corner {
+      border-top-color: rgba(212, 196, 168, 0.4);
+      border-right-color: rgba(212, 196, 168, 0.4);
+    }
+
+
+--- 5.3 SPLIT LAYOUT CARD ---
+
+  HTML:
+    <a href="#" class="split-card">
+      <div class="split-card-left">
+        <img src="image.jpg" alt="...">
+      </div>
+      <div class="split-card-body">
+        <span class="split-card-num">01</span>
+        <h3>Project Name</h3>
+        <p>Description</p>
+        <div class="split-card-line"></div>
+      </div>
+    </a>
+
+  CSS:
+    .split-card {
+      display: flex; aspect-ratio: 16/10;
+      text-decoration: none; overflow: hidden;
+    }
+    .split-card-left {
+      width: 40%; height: 100%; overflow: hidden;
+    }
+    .split-card-left img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.6) saturate(0.8);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .split-card:hover .split-card-left img {
+      filter: brightness(0.7) saturate(0.9);
+      transform: scale(1.05);
+    }
+    .split-card-body {
+      width: 60%; display: flex; flex-direction: column;
+      justify-content: center; padding: 32px;
+      background: var(--surface);
+      transition: background 0.5s;
+    }
+    .split-card:hover .split-card-body {
+      background: #141414;
+    }
+    .split-card-line {
+      width: 40px; height: 1px;
+      background: rgba(154, 124, 82, 0.4);
+      margin-top: 16px;
+      transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .split-card:hover .split-card-line {
+      width: 60px;
+    }
+
+
+--- 5.4 DIAGONAL SPLIT CARD ---
+
+  CSS:
+    .diagonal-card {
+      position: relative; display: block; overflow: hidden;
+      aspect-ratio: 16/10; text-decoration: none;
+    }
+    .diagonal-card .card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; filter: brightness(0.55) saturate(0.8);
+      clip-path: polygon(0 0, 55% 0, 40% 100%, 0 100%);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .diagonal-card:hover .card-img {
+      filter: brightness(0.65) saturate(0.9);
+      clip-path: polygon(0 0, 60% 0, 45% 100%, 0 100%);
+    }
+    .diagonal-card-text {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 55%; display: flex; flex-direction: column;
+      justify-content: center; padding: 40px;
+    }
+    .diagonal-card-accent {
+      position: absolute; bottom: 0; left: 0;
+      width: 55%; height: 3px;
+      background: linear-gradient(90deg, rgba(154,124,82,0.6), transparent);
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .diagonal-card:hover .diagonal-card-accent {
+      width: 65%;
+    }
+
+
+--- 5.5 REFINED CARD (Noise + Gradient Border + Pill + Arrow) ---
+
+  CSS:
+    .refined-card {
+      position: relative; display: block; overflow: hidden;
+      aspect-ratio: 16/10; text-decoration: none;
+      isolation: isolate;
+    }
+    .refined-card::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 3;
+      background-image: url("data:image/svg+xml,..."); /* noise */
+      opacity: 0.04; mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+    .refined-card .card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; filter: brightness(0.5) saturate(0.75);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .refined-card:hover .card-img {
+      filter: brightness(0.65) saturate(0.9);
+      transform: scale(1.05);
+    }
+    .refined-card-border {
+      position: absolute; inset: 0; z-index: 4;
+      border: 1px solid transparent;
+      pointer-events: none;
+      transition: border-color 0.5s;
+    }
+    .refined-card:hover .refined-card-border {
+      border-color: rgba(154, 124, 82, 0.35);
+    }
+    .refined-card-pill {
+      display: inline-flex; align-self: flex-start;
+      font-size: 0.5rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      background: rgba(154, 124, 82, 0.15);
+      border: 1px solid rgba(154, 124, 82, 0.2);
+      padding: 4px 12px; border-radius: 20px;
+      transition: all 0.4s;
+    }
+    .refined-card:hover .refined-card-pill {
+      background: rgba(154, 124, 82, 0.25);
+      border-color: rgba(154, 124, 82, 0.4);
+    }
+    .refined-card-arrow {
+      position: absolute; top: 24px; right: 24px; z-index: 5;
+      width: 40px; height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translate(-8px, 8px);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .refined-card:hover .refined-card-arrow {
+      opacity: 1; transform: translate(0, 0);
+      border-color: rgba(154, 124, 82, 0.4);
+    }
+
+
+================================================================================
+  PROJECT NOTES
+================================================================================
+
+This reference was created for the Empathy Studio presentation system.
+It documents hover effects used across 6 collection pages:
+
+  - Hair Masters (10 live projects)
+  - Cafe Masters (10 live Vercel deployments)
+  - Look-Book Masters (10 placeholder projects)
+  - Yoga Masters (10 placeholder projects)
+  - Restaurant Masters (10 placeholder projects)
+  - Occult Masters (10 placeholder projects)
+
+Each collection uses a 2-column card grid with consistent hover behavior.
+The master page is at: PRESENTATION/master-index.html
+
+Tech stack:
+  - Vanilla HTML/CSS/JS
+  - GSAP 3.12.5 + ScrollTrigger
+  - Lenis smooth scroll
+  - Google Fonts (Playfair Display + Inter)
+
+Design principles:
+  - Only animate transform and opacity (GPU-accelerated)
+  - Use will-change: transform on parallax elements
+  - Consistent easing: cubic-bezier(0.16, 1, 0.3, 1)
+  - Dark theme: #0A0A0A background, #D4C4A8 champagne accent
+  - Images: brightness(0.5-0.65) + saturate(0.7-0.85) as starting state
+
+File structure:
+  PRESENTATION/
+  ├── index.html              (Hair Masters only)
+  ├── master-index.html       (All 6 collections)
+  ├── card-styles-demo.html   (5 card style options)
+  ├── CHANGELOG.md            (Version history)
+  ├── images/cafe/            (Cafe cover images)
+  └── HOVER-EFFECTS-REFERENCE.txt  (This file)
+
+================================================================================
+  END OF REFERENCE
+================================================================================
