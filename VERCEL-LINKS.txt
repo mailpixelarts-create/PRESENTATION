@@ -1,0 +1,86 @@
+REPO: https://github.com/mailnormanjames-alt/PRESENTATION
+SITE: https://presentation-eight-opal.vercel.app/
+
+=== COLLECTION 1: HAIR MASTERS ===
+01 The Alchemist        https://hair-masters-nine.vercel.app/THE-ALCHEMIST/
+02 The Runway Architect https://hair-masters-nine.vercel.app/THE-RUNWAY-ARCHITECT/
+03 The Bridal Sculptor  https://hair-masters-nine.vercel.app/THE-BRIDAL-SCULPTOR/
+04 The Color Futurist   https://hair-masters-nine.vercel.app/THE-COLOR-FUTURIST/
+05 The Editorial Minimalist https://hair-masters-nine.vercel.app/THE-EDITORIAL-MINIMALIST/
+06 The Texture Poet     https://hair-masters-nine.vercel.app/THE-TEXTURE-POET/
+07 The Avant-Garde Transformer https://hair-masters-nine.vercel.app/THE-AVANT-GARDE-TRANSFORMER/
+08 The Red Carpet Director https://hair-masters-nine.vercel.app/THE-RED-CARPET-DIRECTOR/
+09 The Precision Cutter https://hair-masters-nine.vercel.app/THE-PRECISION-CUTTER/
+10 The Hair Ritualist   https://hair-masters-nine.vercel.app/THE-HAIR-RITUALIST/
+
+=== COLLECTION 2: LOOK-BOOK MASTERS ===
+01 The Auction          https://the-auction-snowy.vercel.app
+02 The Ghost            https://the-ghost-two.vercel.app
+03 The Maze             https://the-maze-iota.vercel.app
+04 The Embassy          https://the-embassy.vercel.app
+05 The Opera            https://the-opera.vercel.app
+06 Imperial Express     https://the-imperial-express.vercel.app
+07 The Observatory      https://the-observatory-olive.vercel.app
+08 Cabaret Decadence    https://cabaret-decadence-kappa.vercel.app
+09 Elena Marchetti      https://elena-marchetti-livid.vercel.app
+10 Yuki Tanaka          https://yuki-tanaka-eight.vercel.app
+
+=== COLLECTION 3: CAFE MASTERS ===
+01 The Embassy          https://01-the-embassy.vercel.app
+02 La Equinox           https://02-the-atelier.vercel.app
+03 Rust & Roast         https://03-noir-atelier.vercel.app
+04 The Altitude         https://04-the-altitude.vercel.app
+05 The Atelier Studio   https://05-the-atelier-studio.vercel.app
+06 The Garden           https://06-the-garden.vercel.app
+07 The Roast            https://07-the-roast.vercel.app
+08 The Noir             https://08-the-noir.vercel.app
+09 The Oasis            https://09-the-oasis.vercel.app
+10 The Observatory      https://10-the-observatory.vercel.app
+
+=== COLLECTION 4: YOGA MASTERS ===
+01                      (pending deployment)
+02                      (pending deployment)
+03                      (pending deployment)
+04                      (pending deployment)
+05                      (pending deployment)
+06                      (pending deployment)
+07                      (pending deployment)
+08                      (pending deployment)
+09                      (pending deployment)
+10                      (pending deployment)
+
+=== COLLECTION 5: RESTAURANT MASTERS ===
+01 The Alchemist        https://restaurant-01-alchemist.vercel.app
+02 The Sanctuary        https://restaurant-02-sanctuary.vercel.app
+03 The Grand Palace     https://restaurant-03-grand-palace.vercel.app
+04 The Atlas            https://restaurant-04-atlas.vercel.app
+05 The Forge            https://restaurant-05-forge.vercel.app
+06 The Secret Garden    https://restaurant-06-secret-garden.vercel.app
+07 The Foundry          https://restaurant-07-foundry.vercel.app
+08 The Void             https://restaurant-08-void.vercel.app
+09 The Chronicle        https://restaurant-09-chronicle.vercel.app
+10 The Machine          https://restaurant-10-machine.vercel.app
+
+=== COLLECTION 6: OCCULT MASTERS ===
+01                      (pending deployment)
+02                      (pending deployment)
+03                      (pending deployment)
+04                      (pending deployment)
+05                      (pending deployment)
+06                      (pending deployment)
+07                      (pending deployment)
+08                      (pending deployment)
+09                      (pending deployment)
+10                      (pending deployment)
+
+=== COLLECTION 7: FILM MASTERS ===
+01 Marie Dubois         https://cinema-sotd.vercel.app/marie-dubois/
+02 Amin Hassani         https://cinema-sotd.vercel.app/amin-hassani/
+03 Clara Voss           https://cinema-sotd.vercel.app/clara-voss/
+04 Isabelle Frost       https://cinema-sotd.vercel.app/isabelle-frost/
+05 Kofi Mensah          https://cinema-sotd.vercel.app/kofi-mensah/
+06 Nadia Okafor         https://cinema-sotd.vercel.app/nadia-okafor/
+07 Thomas Renard        https://cinema-sotd.vercel.app/thomas-renard/
+08 Rafael Santos        https://cinema-sotd.vercel.app/rafael-santos/
+09 Lea Moreau           https://cinema-sotd.vercel.app/lea-moreau/
+10 Yuki Tanaka          https://cinema-sotd.vercel.app/yuki-tanaka/
