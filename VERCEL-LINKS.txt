@@ -1,4 +1,4 @@
-REPO: https://github.com/mailnormanjames-alt/PRESENTATION
+REPO: https://github.com/mailpixelarts-create/PRESENTATION
 SITE: https://presentation-eight-opal.vercel.app/
 
 === COLLECTION 1: HAIR MASTERS ===
